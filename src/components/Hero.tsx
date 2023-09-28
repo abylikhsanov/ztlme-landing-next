@@ -11,7 +11,7 @@ export const Hero = () => {
         </span>
       </div>
       <div className="flex max-w-3xl m-8 items-center justify-center text-center bg-blue-300">
-        <span>
+        <span className='font-dm'>
           Si farvel til tradisjonelle profittjagende forsikringsselskaper og hei
           til ztl.me - den nyskapende løsningen som tilbyr rimelig dekning med
           full transparens og avkastning.

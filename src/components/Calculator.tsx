@@ -25,16 +25,14 @@ export const Calculator = () => {
   }, [years]);
 
   return (
-    <div className="flex flex-col bg-blue-300 justify-center items-center p-8">
-      <div className="flex flex-row justify-around">
-        <span>Total people signed up: </span>
-        <span>{totalPeople}</span>
-      </div>
-      <div>Each person submitted: {amountPerPerson} NOK</div>
-      <div>Pool at the start: {totalPool} NOK</div>
-      <div>Amount spent on claims after 1 year: {spentOnClaims} NOK</div>
-      <div>Available per person: {availablePerPerson.toFixed(2)} NOK</div>
-      <div>If you didnt claim, available sum: 3,333 NOK</div>
+    <div className="flex flex-col bg-blue-300 p-2 max-w-2xl mx-auto">
+      <InfoColumn info="Total people signed up: " value={totalPeople} />
+      
+      <InfoColumn info="Each person submitted: " value={amountPerPerson} />
+      <InfoColumn info="Pool at the start: " value={totalPool} />
+      <InfoColumn info="Amount spent on claims after 1 year: " value={Number(spentOnClaims.toFixed(1))} />
+      <InfoColumn info="Available per person: " value={Number(availablePerPerson.toFixed(1))} />
+      <InfoColumn info="If you didnt claim, available sum: " value={Number(availablePerPerson.toFixed(1))} />
 
       <div className="mt-4">
         <label htmlFor="years">Years: {years}</label>
@@ -56,3 +54,12 @@ export const Calculator = () => {
     </div>
   );
 };
+
+const InfoColumn = ({info, value}:{info: string, value: number}) => {
+    return (
+        <div className="flex flex-row m-8 justify-between">
+            <span className='font-dm'>{info}</span>
+            <span className='font-dm font-bold'>{value}</span>
+        </div>
+    )
+}
