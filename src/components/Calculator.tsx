@@ -14,8 +14,14 @@ export const Calculator = () => {
   const annualEarningsRate = 0.12;
 
   useEffect(() => {
-    const futureValue = availablePerPerson * Math.pow((1 + annualEarningsRate), years);
-    setSavedAmount(futureValue - availablePerPerson);
+    const futureValueAnnuity = (amount: number, rate: number, periods: number) => {
+        return amount * ((Math.pow(1 + rate, periods) - 1) / rate);
+    };
+
+    const totalContributions = availablePerPerson * years;
+    const totalInterest = futureValueAnnuity(availablePerPerson, annualEarningsRate, years) - totalContributions;
+
+    setSavedAmount(totalContributions + totalInterest);
   }, [years]);
 
   return (
@@ -45,7 +51,7 @@ export const Calculator = () => {
       </div>
 
       <div className="mt-4">
-        Potential money saved with approximately 12% annual earnings on 3,333 NOK for {years} years: {savedAmount.toFixed(2)} NOK
+        Potential money saved with approximately 12% annual earnings on {3333 * years} for {years} years: {savedAmount.toFixed(2)} NOK
       </div>
     </div>
   );
