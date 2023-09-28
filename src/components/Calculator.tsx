@@ -1,6 +1,9 @@
-'use client'
+"use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Card, List } from "antd";
+import { Slider, Switch } from 'antd';
+
 
 export const Calculator = () => {
   const [years, setYears] = useState(1);
@@ -13,53 +16,79 @@ export const Calculator = () => {
   const availablePerPerson = (totalPool - spentOnClaims) / totalPeople;
   const annualEarningsRate = 0.12;
 
+  const data = [
+    {
+      title: "Total people signed up",
+      content: totalPeople
+    },
+    {
+       title: "Each person submitted",
+       content: amountPerPerson
+    },
+    {
+      title: "Pool at the start",
+      content: totalPool
+    },
+    {
+      title: "Amount spent on claims (2/3)",
+      content: Number(spentOnClaims.toFixed(1))
+    },
+    {
+      title: "Available per person",
+      content: Number(spentOnClaims.toFixed(1))
+    },
+    {
+      title: "If you didnt claim, available sum",
+      content: Number(availablePerPerson.toFixed(1))
+    },
+  ];
+
   useEffect(() => {
-    const futureValueAnnuity = (amount: number, rate: number, periods: number) => {
-        return amount * ((Math.pow(1 + rate, periods) - 1) / rate);
+    const futureValueAnnuity = (
+      amount: number,
+      rate: number,
+      periods: number
+    ) => {
+      return amount * ((Math.pow(1 + rate, periods) - 1) / rate);
     };
 
     const totalContributions = availablePerPerson * years;
-    const totalInterest = futureValueAnnuity(availablePerPerson, annualEarningsRate, years) - totalContributions;
+    const totalInterest =
+      futureValueAnnuity(availablePerPerson, annualEarningsRate, years) -
+      totalContributions;
 
     setSavedAmount(totalContributions + totalInterest);
   }, [years]);
 
   return (
-    <div className="flex flex-col bg-blue-300 p-2 max-w-2xl mx-auto">
-      <InfoColumn info="Total people signed up: " value={totalPeople} />
-      
-      <InfoColumn info="Each person submitted: " value={amountPerPerson} />
-      <InfoColumn info="Pool at the start: " value={totalPool} />
-      <InfoColumn info="Amount spent on claims after 1 year: " value={Number(spentOnClaims.toFixed(1))} />
-      <InfoColumn info="Available per person: " value={Number(availablePerPerson.toFixed(1))} />
-      <InfoColumn info="If you didnt claim, available sum: " value={Number(availablePerPerson.toFixed(1))} />
+    <div className="flex flex-col m-8 p-2 max-w-2xl mx-auto">
+
+      <List
+        grid={{
+          gutter: 16,
+          xs: 1,
+          sm: 2,
+          md: 2,
+          lg: 2,
+          xl: 2,
+          xxl: 3,
+        }}
+        dataSource={data}
+        renderItem={(item) => (
+          <List.Item>
+            <Card className="font-dm" title={item.title}>{item.content}</Card>
+          </List.Item>
+        )}
+      />
 
       <div className="mt-4">
-        <label htmlFor="years">Years: {years}</label>
-        <input 
-          type="range" 
-          id="years" 
-          name="years" 
-          min="1" 
-          max="10" 
-          value={years} 
-          onChange={(e) => setYears(Number(e.target.value))} 
-          className="w-full"
-        />
+        <div className="mb-4">
+          <span className="font-dm">Return after {years} years with 12% annual return: {savedAmount.toFixed(0)} NOK</span>
+        </div>
+        <Slider defaultValue={1} min={1} max={10} onChange={(value) => setYears(Number(value))}/>
       </div>
 
-      <div className="mt-4">
-        Potential money saved with approximately 12% annual earnings on {3333 * years} for {years} years: {savedAmount.toFixed(2)} NOK
-      </div>
     </div>
   );
 };
 
-const InfoColumn = ({info, value}:{info: string, value: number}) => {
-    return (
-        <div className="flex flex-row m-8 justify-between">
-            <span className='font-dm'>{info}</span>
-            <span className='font-dm font-bold'>{value}</span>
-        </div>
-    )
-}
