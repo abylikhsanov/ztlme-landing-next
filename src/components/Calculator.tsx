@@ -16,30 +16,33 @@ export const Calculator = () => {
   const availablePerPerson = (totalPool - spentOnClaims) / totalPeople;
   const annualEarningsRate = 0.12;
 
+  const headerText = "Dine Potensielle besparesler"
+  const underText = "Se på dine potensielle besparesler over tid"
+
   const data = [
     {
-      title: "Total people signed up",
-      content: totalPeople
+      title: "Totalt folk meldte seg på",
+      content: totalPeople.toLocaleString('fr-FR')
     },
     {
-       title: "Each person submitted",
-       content: amountPerPerson
+       title: "Innbetaling fra hver person",
+       content: Number(amountPerPerson.toFixed(1)).toLocaleString('fr-FR')
     },
     {
-      title: "Pool at the start",
-      content: totalPool
+      title: "Fellespenger i starten",
+      content: Number(totalPool.toFixed(1)).toLocaleString('fr-FR')
     },
     {
-      title: "Amount spent on claims (2/3)",
-      content: Number(spentOnClaims.toFixed(1))
+      title: "penger brukt til krav (2/3)",
+      content: Number(spentOnClaims.toFixed(1)).toLocaleString('fr-FR')
     },
     {
-      title: "Available per person",
-      content: Number(spentOnClaims.toFixed(1))
+      title: "Penger igjen til hver person",
+      content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR')
     },
     {
-      title: "If you didnt claim, available sum",
-      content: Number(availablePerPerson.toFixed(1))
+      title: "Uten krav, tilgjengelig sum",
+      content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR')
     },
   ];
 
@@ -61,34 +64,41 @@ export const Calculator = () => {
   }, [years]);
 
   return (
-    <div className="flex flex-col m-8 p-2 max-w-2xl mx-auto">
+    <div className="flex flex-col m-8 p-4 bg-white shadow-md rounded-lg max-w-2xl mx-auto">
 
-      <List
-        grid={{
-          gutter: 16,
-          xs: 1,
-          sm: 2,
-          md: 2,
-          lg: 2,
-          xl: 2,
-          xxl: 3,
-        }}
-        dataSource={data}
-        renderItem={(item) => (
-          <List.Item>
-            <Card className="font-dm" title={item.title}>{item.content}</Card>
-          </List.Item>
-        )}
-      />
+      <h1 className="text-2xl font-bold font-dm mb-4">{headerText}</h1>
+      <p className="text-gray-600 mb-6">{underText}</p>
 
-      <div className="mt-4">
-        <div className="mb-4">
-          <span className="font-dm">Return after {years} years with 12% annual return: {savedAmount.toFixed(0)} NOK</span>
-        </div>
-        <Slider defaultValue={1} min={1} max={10} onChange={(value) => setYears(Number(value))}/>
+      <div className="flex flex-col items-center mb-6">
+        <label htmlFor="years" className="mb-2">År: {years}</label>
+        <input 
+          type="range" 
+          id="years" 
+          name="years" 
+          min="1" 
+          max="10" 
+          value={years} 
+          onChange={(e) => setYears(Number(e.target.value))} 
+          className="w-full"
+        />
+      </div>
+
+      <div className="text-center">
+        <span className="text-lg">Avkastning etter {years} år med 12 % årlig avkastning: </span>
+        <span className="ml-2 text-2xl font-bold">{savedAmount.toFixed(0)} NOK</span>
+      </div>
+
+      <div className="flex flex-col p-8">
+        {data.map((item, index) => (
+            <div key={index} className="flex flex-row justify-between mb-2">
+                <h2 className="font-dm text-md sm:text-sm md:text-md lg:text-md xl:text-md">{item.title}</h2>
+                <p className="font-dm text-sm sm:text-xs md:text-sm lg:text-sm xl:text-sm">{item.content}</p>
+            </div>
+        ))}
       </div>
 
     </div>
   );
 };
+
 

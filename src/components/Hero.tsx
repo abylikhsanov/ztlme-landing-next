@@ -10,7 +10,7 @@ export const Hero = () => {
           avkastning
         </span>
       </div>
-      <div className="flex max-w-3xl m-8 items-center justify-center text-center bg-blue-300">
+      <div className="flex max-w-3xl m-8 items-center justify-center text-center3">
         <span className='font-dm'>
           Si farvel til tradisjonelle profittjagende forsikringsselskaper og hei
           til ztl.me - den nyskapende løsningen som tilbyr rimelig dekning med
