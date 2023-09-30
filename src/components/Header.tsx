@@ -1,16 +1,44 @@
+'use client'
+
 import Image from 'next/image';
-import { Button, Space } from 'antd';
+import { Button } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
+import { useState } from "react"
 
 export const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
-        <div className="flex flex-row justify-around mt-6">
-            <Image src="/ztlme_logo.png" alt="Company Logo" width={157} height={44} />
-            <div className="hidden md:flex space-x-6">
+        <div>
+        <div className="flex flex-row justify-between m-6">
+            <Image src="/ztlme_logo.png" alt="Company Logo" width={150} height={44} />
+
+            {/* Desktop Menu */}
+            <div className="hidden sm:flex space-x-6">
                 <span className='font-dm cursor-pointer hover:text-blue-700'>Home</span>
                 <span className="font-dm ml-6 cursor-pointer hover:text-blue-700">About</span>
                 <span className="font-dm ml-6 cursor-pointer hover:text-blue-700">Contact</span>
                 <Button type="primary" ghost className="font-dm ml-20">Signup</Button>
             </div>
+
+            {/* Mobile Menu Button (burger) */}
+            <button className="sm:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+               <MenuOutlined />
+            </button>
+
+        </div>
+          {/* Mobile Menu Upon Pressed */}
+          {menuOpen && (
+                <div className="w-full sm:hidden">
+                    <div className="flex flex-col justify-center items-center m-4">
+                        <span className="font-dm cursor-pointer hover:text-blue-700 mb-2">Home</span>
+                        <span className="font-dm cursor-pointer hover:text-blue-700 mb-2">About</span>
+                        <span className="font-dm cursor-pointer hover:text-blue-700 mb-2">Contact</span>
+                        <Button type="primary" ghost className="font-dm">Signup</Button>
+                    </div>
+                </div>    
+              )
+            }
         </div>
     )
 }

@@ -64,9 +64,9 @@ export const Calculator = () => {
   }, [years]);
 
   return (
-    <div className="flex flex-col m-8 p-4 bg-white shadow-md rounded-lg max-w-2xl mx-auto bg-blue-100">
+    <div className="flex flex-col m-8 p-4 bg-white shadow-md rounded-lg max-w-7xl mx-auto bg-blue-100">
 
-      <h1 className="text-[#004ac5] text-2xl font-bold font-dm mb-4">{headerText}</h1>
+      <h1 className="text-2xl font-bold font-dm mb-4">{headerText}</h1>
       <p className="text-gray-600 mb-6">{underText}</p>
 
       <div className="flex flex-col items-center mb-6">
@@ -85,7 +85,7 @@ export const Calculator = () => {
 
       <div className="text-center flex flex-col">
         <span className="text-lg">Avkastning etter {years} år med 12 % årlig avkastning: </span>
-        <span className="text-[#004ac5] mt-2 ml-2 text-2xl font-bold">{Number(savedAmount.toFixed(0)).toLocaleString('fr-FR')} NOK</span>
+        <span className="mt-2 ml-2 text-2xl font-bold">{Number(savedAmount.toFixed(0)).toLocaleString('fr-FR')} NOK</span>
       </div>
 
       <div className="flex flex-col p-8">
