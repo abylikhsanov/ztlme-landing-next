@@ -5,7 +5,9 @@ import { Button } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useState } from "react"
 
-export const Header = () => {
+import { GetLoginLink } from "../api/BackendAPI"
+
+export const Header = ({handleClick}:{handleClick: () => void}) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
@@ -18,7 +20,7 @@ export const Header = () => {
                 <span className='font-dm cursor-pointer hover:text-blue-700'>Home</span>
                 <span className="font-dm ml-6 cursor-pointer hover:text-blue-700">About</span>
                 <span className="font-dm ml-6 cursor-pointer hover:text-blue-700">Contact</span>
-                <Button type="primary" ghost className="font-dm ml-20">Signup</Button>
+                <Button type="primary" ghost className="font-dm ml-20" onClick={handleClick}>Bli med</Button>
             </div>
 
             {/* Mobile Menu Button (burger) */}
@@ -34,7 +36,7 @@ export const Header = () => {
                         <span className="font-dm cursor-pointer hover:text-blue-700 mb-2">Home</span>
                         <span className="font-dm cursor-pointer hover:text-blue-700 mb-2">About</span>
                         <span className="font-dm cursor-pointer hover:text-blue-700 mb-2">Contact</span>
-                        <Button type="primary" ghost className="font-dm">Signup</Button>
+                        <Button type="primary" ghost className="font-dm" onClick={handleClick}>Bli med</Button>
                     </div>
                 </div>    
               )

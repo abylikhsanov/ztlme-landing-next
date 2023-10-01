@@ -1,7 +1,12 @@
+'use client'
+
 import { Button, Space } from "antd";
 import Image from "next/image";
 
-export const Hero = () => {
+import { GetLoginLink } from "../api/BackendAPI"
+
+export const Hero = ({handleClick}:{handleClick: () => void}) => {
+
   return (
     <div className="flex flex-col mt-20 items-center justify-center max-w-5xl mx-auto">
       <div className="flex items-center justify-center text-center m-6">
@@ -13,8 +18,8 @@ export const Hero = () => {
           transparens og avkastning.
         </span>
       </div>
-      <Button type="primary" shape="round" className="bg-[#1677ff]" size="large">
-        Get Started
+      <Button type="primary" shape="round" className="bg-[#1677ff]" size="large" onClick={handleClick}>
+        Bli med
       </Button>
 
       <div className="m-4 md:m-8 relative w-[40vw] h-[50vw] md:h-[600px]">
