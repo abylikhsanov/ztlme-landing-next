@@ -8,7 +8,7 @@ export const Footer = () => {
       <div className="flex justify-center items-center">
         <Image src="/ztlme_logo.png" alt="Company Logo" width={150} height={44} />
       </div>
-      <div className="flex flex-row justify-between m-8">
+      <div className="flex flex-row justify-between mt-8 mb-8">
         <div className="flex flex-row">
           <CopyrightOutlined />
           <p className="font-dm text-md text-gray-500 ml-2">ztl.me Holding AS 2023</p>

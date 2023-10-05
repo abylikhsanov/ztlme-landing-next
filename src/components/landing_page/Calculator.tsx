@@ -25,24 +25,24 @@ export const Calculator = () => {
       content: totalPeople.toLocaleString('fr-FR')
     },
     {
-       title: "Innbetaling fra hver person",
-       content: Number(amountPerPerson.toFixed(1)).toLocaleString('fr-FR')
+       title: "Din nåværende forsikring per år**",
+       content: Number(amountPerPerson.toFixed(1)).toLocaleString('fr-FR') + " kr"
     },
     {
       title: "Fellespenger i starten",
-      content: Number(totalPool.toFixed(1)).toLocaleString('fr-FR')
+      content: Number(totalPool.toFixed(1)).toLocaleString('fr-FR') + " kr"
     },
     {
-      title: "penger brukt til krav (2/3)",
-      content: Number(spentOnClaims.toFixed(1)).toLocaleString('fr-FR')
+      title: "penger brukt til krav (2/3)**",
+      content: Number(spentOnClaims.toFixed(1)).toLocaleString('fr-FR') + " kr"
     },
     {
       title: "Penger igjen til hver person",
-      content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR')
+      content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR') + " kr"
     },
     {
       title: "Uten krav, tilgjengelig sum",
-      content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR')
+      content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR') + " kr"
     },
   ];
 
@@ -83,9 +83,14 @@ export const Calculator = () => {
         />
       </div>
 
+      <div className="text-center flex flex-col mb-4">
+        <span className="text-lg">Avkastning etter {years} år hos ztl.me*: </span>
+        <span className="mt-2 ml-2 text-2xl font-bold">{Number(savedAmount.toFixed(0)).toLocaleString('fr-FR')} kr</span>
+      </div>
+
       <div className="text-center flex flex-col">
-        <span className="text-lg">Avkastning etter {years} år med 12 % årlig avkastning: </span>
-        <span className="mt-2 ml-2 text-2xl font-bold">{Number(savedAmount.toFixed(0)).toLocaleString('fr-FR')} NOK</span>
+        <span className="text-lg">Avkastning hos tradisjonelle selskaper: </span>
+        <span className="mt-2 ml-2 text-2xl font-bold">Alltid 0 kr</span>
       </div>
 
       <div className="flex flex-col p-8">
@@ -95,6 +100,11 @@ export const Calculator = () => {
                 <p className="font-dm text-sm sm:text-xs md:text-sm lg:text-sm xl:text-sm">{item.content}</p>
             </div>
         ))}
+
+        <div className="flex flex-col mt-8">
+          <p className="font-dm text-xs sm:text-xs md:text-xs lg:text-xs xl:text-xs">* Potensiell avkastning gitt at det er 12% avkastning hvert år</p>
+          <p className="font-dm text-xs sm:text-xs md:text-xs lg:text-xs xl:text-xs">** Exampel på bilforsikring pris</p>
+        </div>
       </div>
 
     </div>
