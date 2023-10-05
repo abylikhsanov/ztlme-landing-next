@@ -1,13 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Card, List } from "antd";
-import { Slider, Switch } from 'antd';
+import { Slider } from 'antd';
 
 
 export const Calculator = () => {
   const [years, setYears] = useState(1);
   const [savedAmount, setSavedAmount] = useState(0);
+
+  const [disabled, setDisabled] = useState(false);
+
+  const onChange = (checked: boolean) => {
+    setDisabled(checked);
+  };
 
   const totalPeople = 40000;
   const amountPerPerson = 10000;
@@ -54,6 +59,7 @@ export const Calculator = () => {
     ) => {
       return amount * ((Math.pow(1 + rate, periods) - 1) / rate);
     };
+    
 
     const totalContributions = availablePerPerson * years;
     const totalInterest =
@@ -69,19 +75,9 @@ export const Calculator = () => {
       <h1 className="text-2xl font-bold font-dm mb-4">{headerText}</h1>
       <p className="text-gray-600 mb-6">{underText}</p>
 
-      <div className="flex flex-col items-center mb-6">
-        <label htmlFor="years" className="mb-2">År: {years}</label>
-        <input 
-          type="range" 
-          id="years" 
-          name="years" 
-          min="1" 
-          max="10" 
-          value={years} 
-          onChange={(e) => setYears(Number(e.target.value))} 
-          className="w-full"
-        />
-      </div>
+      <p className="font-dm text-center text-lg">År {years}</p>
+
+      <Slider defaultValue={1} onChange={(e) => setYears(Number(e))} disabled={disabled} min={1} max={10} step={1} />
 
       <div className="text-center flex flex-col mb-4">
         <span className="text-lg">Avkastning etter {years} år hos ztl.me*: </span>
