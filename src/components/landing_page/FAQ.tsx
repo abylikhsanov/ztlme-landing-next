@@ -39,7 +39,7 @@ const textData = [
 
 export const FAQ = () => {
   return (
-    <div className="flex flex-col justify-center items-center max-w-5xl mx-auto mt-12 ml-8 mr-8">
+    <div className="flex flex-col justify-center items-center mt-12 p-4 max-w-5xl mx-auto">
       <div className="flex flex-col w-full max-w-3xl m-4 pb-4">
         <h1 className="font-dm font-bold text-3xl">FAQ</h1>
       </div>
