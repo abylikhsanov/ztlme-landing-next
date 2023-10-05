@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "antd";
 import Image from "next/image";
 
-import { GetLoginLink } from "../../api/BackendAPI"
+import { GetDocumentLink } from "../../api/BackendAPI"
 
 export const Hero = () => {
 
@@ -21,7 +21,12 @@ export const Hero = () => {
       }, []);
     
       const handleClick = async () => {
-        
+        try {
+            const link = await GetDocumentLink();
+            window.location.href = link;
+        } catch (error) {
+            console.error("error");
+        }
       }
 
   return (

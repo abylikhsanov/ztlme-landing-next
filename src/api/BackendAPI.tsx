@@ -31,3 +31,13 @@ export const GetLoginLink = async () => {
   }
   return data.authenticationUrl;
 };
+
+export const GetDocumentLink = async () => {
+  const data = await getResponse("https://ztlme-6a589cc5f144.herokuapp.com/signature/sign", "GET");
+  if (!data) {
+    console.error("Data is null");
+    throw Error("Data is null");
+  }
+
+  return data.href;
+}
