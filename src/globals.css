@@ -29,12 +29,12 @@ body {
 
 @font-face {
   font-family: 'DM Sans';
-  src: url("../../assets/fonts/DM-sans/DMSans-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/DM-sans/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DM Sans variable';
-  src: url("../../assets/fonts/DM-sans/DMSans-VariableFont_opsz\,wght.ttf") format("truetype");
+  src: url("../assets/fonts/DM-sans/DMSans-VariableFont_opsz\,wght.ttf") format("truetype");
 }

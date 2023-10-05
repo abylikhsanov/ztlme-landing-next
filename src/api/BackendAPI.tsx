@@ -24,6 +24,7 @@ const getResponse = async (url: string, method: string) => {
 
 export const GetLoginLink = async () => {
   const data = await getResponse("https://ztlme-6a589cc5f144.herokuapp.com/auth/startAuth", "GET");
+  // const data = await getResponse("http://localhost:3005/auth/startAuth", "GET");
   if (!data) {
     console.error("Data is null");
     throw Error(`Data is null`);
