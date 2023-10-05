@@ -2,12 +2,12 @@
 
 import "../app/globals.css"
 
-import { Header } from "../components/Header"
-import { Hero } from "@/components/Hero"
-import { Calculator } from "@/components/Calculator"
-import { Why } from "@/components/Why"
-import { FAQ } from "@/components/FAQ"
-import { Footer } from "@/components/Footprint"
+import { Header } from "@/components/landing_page/Header"
+import { Hero } from "@/components/landing_page/Hero"
+import { Calculator } from "@/components/landing_page/Calculator"
+import { Why } from "@/components/landing_page/Why"
+import { FAQ } from "@/components/landing_page/FAQ"
+import { Footer } from "@/components/landing_page/Footprint"
 
 import { GetLoginLink } from "@/api/BackendAPI"
 

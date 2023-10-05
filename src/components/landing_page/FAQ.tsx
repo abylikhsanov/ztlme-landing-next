@@ -40,7 +40,7 @@ const textData = [
 export const FAQ = () => {
   return (
     <div className="flex flex-col justify-center items-center max-w-5xl mx-auto mt-12">
-      <div className="flex flex-col w-full max-w-3xl m-4 border-b-2 border-black">
+      <div className="flex flex-col w-full max-w-3xl m-4 pb-4">
         <h1 className="font-dm font-bold text-3xl">FAQ</h1>
       </div>
       {textData.map((data, index) => (
@@ -67,8 +67,8 @@ const Question = ({ title, content }: { title: string; content: string }) => {
 
   return (
     <div className="flex flex-col w-full max-w-3xl" ref={questionRef}>
-      <div className="flex flex-row w-full max-w-3xl border-b-2 border-black mb-2 justify-between">
-        <h2 className="font-dm font-bold text-xl">{title}</h2>
+      <div className="flex flex-row w-full max-w-3xl border-b-2 border-black mt-4 mb-2 pb-6 justify-between">
+        <h2 className="font-dm text-xl">{title}</h2>
         <DownOutlined onClick={handleClick} />
       </div>
       {opened && (
