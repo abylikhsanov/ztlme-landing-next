@@ -8,18 +8,17 @@ export const Why = () => {
   const [firstFeatureOpened, setFirstFeatureOpened] = useState(false);
   const [secondFeatureOpened, setSecondFeatureOpened] = useState(false);
   const [thirdFeatureOpened, setThirdFeatureOpened] = useState(false);
-  const [fourthFeatureOpened, setFourthFeatureOpened] = useState(false);
 
   return (
     <div className="flex flex-col m-12 max-w-7xl mx-auto">
       <div className="flex flex-col items-center p-4 max-w-3xl mx-auto rounded-lg mb-24">
         <h1 className="font-bold font-dm text-3xl mb-4">Hvorfor ztl.me?</h1>
         <p className="text-sm sm:text-xl md:text-xl font-dm text-center text-gray-500">
-          ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40000 selvforsikrere. Hvorfor akkurat 40000 selvforsikrere? Hvis
-          man tar utgangspunkt i en gjennomsnittlig forsikringskunde i Norge sier matematiske forsikringsmodeller at man trenger 33000 kunder for å kunne drive
+          ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40 000 selvforsikrere. Hvorfor akkurat 40 000 selvforsikrere? Hvis
+          man tar utgangspunkt i en gjennomsnittlig forsikringskunde i Norge sier matematiske forsikringsmodeller at man trenger 33 000 kunder for å kunne drive
           lønnsom forsikringsvirksomhet. Dette inkluderer alle utbetalinger til skade og tap, samt drift og avkastning på egenkapitalen. Vi har derfor lagt oss
           på et litt høyere nivå slik at ztl.me har en ekstra god margin, noe som uansett kommer ztl.mes selvforsikrere til gode i form av avkastning.
-          ytterligere til gode.
+          Ytterligere til gode.
         </p>
       </div>
 

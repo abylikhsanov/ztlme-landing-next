@@ -15,11 +15,11 @@ export const Calculator = () => {
   };
 
   const totalPeople = 40000;
-  const amountPerPerson = 10000;
+  const amountPerPerson = 12000;
   const totalPool = totalPeople * amountPerPerson;
   const spentOnClaims = (2 / 3) * totalPool;
   const availablePerPerson = (totalPool - spentOnClaims) / totalPeople;
-  const annualEarningsRate = 0.12;
+  const annualEarningsRate = 0.05;
 
   const headerText = "Dine Potensielle besparesler"
   const underText = "Se på dine potensielle besparesler over tid"
@@ -41,14 +41,14 @@ export const Calculator = () => {
       title: "penger brukt til krav (2/3)**",
       content: Number(spentOnClaims.toFixed(1)).toLocaleString('fr-FR') + " kr"
     },
-    {
-      title: "Penger igjen til hver person",
+    /*{
+      title: "Penger igjen til",
       content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR') + " kr"
-    },
+    },*/
     {
       title: "Uten krav, tilgjengelig sum",
       content: Number(availablePerPerson.toFixed(1)).toLocaleString('fr-FR') + " kr"
-    },
+    }
   ];
 
   useEffect(() => {
