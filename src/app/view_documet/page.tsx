@@ -1,6 +1,6 @@
 'use client'
 
-import "../app/globals.css"
+import "../globals.css"
 
 import { Header } from "@/components/landing_page/Header"
 import { Hero } from "@/components/signedup_page/Hero"
