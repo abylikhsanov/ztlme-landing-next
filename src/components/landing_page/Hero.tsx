@@ -21,7 +21,7 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
           <h1 className='max-w-4xl text-primary text-5xl font-bold md:text-6xl lg:text-6xl'>
               Fremtidens forsikring for deg som ønsker{' '}
               <span className='text-blue-600'>trygghet</span>{' '}
-              trygghet og{' '}
+               og{' '}
               <span className='text-blue-600'>lønnsom avkastning</span>
           </h1>
           <p className='m-8 max-w-prose text-zinc-700 sm:text-lg'>

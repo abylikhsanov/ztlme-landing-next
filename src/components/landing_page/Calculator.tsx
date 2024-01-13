@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Slider } from 'antd';
+import {Graph} from "@/components/landing_page/Graph";
 
 
 export const Calculator = () => {
@@ -103,6 +104,7 @@ export const Calculator = () => {
         </div>
       </div>
 
+      {/* <Graph /> */}
     </div>
   );
 };
