@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from "react";
 import { Slider } from 'antd';
 import {Graph} from "@/components/landing_page/Graph";
-
+import {Save} from "lucide-react";
 
 export const Calculator = () => {
   const [years, setYears] = useState(1);
   const [savedAmount, setSavedAmount] = useState(0);
-
+  const [futureAmounts, setFutureAmounts] = useState(Array<number>);
   const [disabled, setDisabled] = useState(false);
 
   const onChange = (checked: boolean) => {
@@ -24,6 +24,14 @@ export const Calculator = () => {
 
   const headerText = "Dine Potensielle besparesler"
   const underText = "Se på dine potensielle besparesler over tid"
+  
+  function GetTotalReturnAmount(givenYears: number) : number {
+    const totalContributions = availablePerPerson * givenYears;
+    const totalInterest =
+        futureValueAnnuity(availablePerPerson, annualEarningsRate, givenYears) -
+        totalContributions;
+    return totalContributions + totalInterest;
+  }
 
   const data = [
     {
@@ -52,22 +60,21 @@ export const Calculator = () => {
     }
   ];
 
-  useEffect(() => {
-    const futureValueAnnuity = (
+  const futureValueAnnuity = (
       amount: number,
       rate: number,
       periods: number
-    ) => {
-      return amount * ((Math.pow(1 + rate, periods) - 1) / rate);
-    };
+  ) => {
+    return amount * ((Math.pow(1 + rate, periods) - 1) / rate);
+  };
+  
+  let fA = Array<number>(5).fill(1, 1, 5);
+  fA.map(n => GetTotalReturnAmount(n));
+  // setFutureAmounts(fA);
+
+  useEffect(() => {
     
-
-    const totalContributions = availablePerPerson * years;
-    const totalInterest =
-      futureValueAnnuity(availablePerPerson, annualEarningsRate, years) -
-      totalContributions;
-
-    setSavedAmount(totalContributions + totalInterest);
+    setSavedAmount(GetTotalReturnAmount(years));
   }, [years]);
 
   return (
@@ -78,23 +85,29 @@ export const Calculator = () => {
 
       <p className="font-dm text-center text-lg">År {years}</p>
 
-      <Slider defaultValue={1} onChange={(e) => setYears(Number(e))} disabled={disabled} min={1} max={10} step={1} />
+      <Slider defaultValue={1} onChange={(e) => setYears(Number(e))} disabled={disabled} min={1} max={5} step={1} />
 
-      <div className="text-center flex flex-col mb-4">
-        <span className="text-lg">Avkastning etter {years} år hos ztl.me*: </span>
-        <span className="mt-2 ml-2 text-2xl font-bold">{Number(savedAmount.toFixed(0)).toLocaleString('fr-FR')} kr</span>
+      <div className="flex flex-col md:flex-row justify-around items-center">
+        {/*<Graph x_axis={[0, 1, 2, 3, 4, 5]} y_axis={fA} nok_value={Number(savedAmount.toFixed(0))}/>*/}
+        <div className="py-7">
+          <div className="text-center flex flex-col mb-4">
+            <span className="text-lg">Avkastning etter {years} år hos ztl.me*: </span>
+            <span
+                className="mt-2 ml-2 text-2xl font-bold">{Number(savedAmount.toFixed(0)).toLocaleString('fr-FR')} kr</span>
+          </div>
+          <div className="text-center flex flex-col">
+            <span className="text-lg">Avkastning hos tradisjonelle selskaper: </span>
+            <span className="mt-2 ml-2 text-2xl font-bold">Alltid 0 kr</span>
+          </div>
+        </div>
       </div>
 
-      <div className="text-center flex flex-col">
-        <span className="text-lg">Avkastning hos tradisjonelle selskaper: </span>
-        <span className="mt-2 ml-2 text-2xl font-bold">Alltid 0 kr</span>
-      </div>
 
       <div className="flex flex-col p-8">
         {data.map((item, index) => (
             <div key={index} className="flex flex-row justify-between mb-2">
-                <h2 className="font-dm text-md sm:text-sm md:text-md lg:text-md xl:text-md">{item.title}</h2>
-                <p className="font-dm text-sm sm:text-xs md:text-sm lg:text-sm xl:text-sm">{item.content}</p>
+              <h2 className="font-dm text-md sm:text-sm md:text-md lg:text-md xl:text-md">{item.title}</h2>
+              <p className="font-dm text-sm sm:text-xs md:text-sm lg:text-sm xl:text-sm">{item.content}</p>
             </div>
         ))}
 
@@ -103,8 +116,7 @@ export const Calculator = () => {
           <p className="font-dm text-xs sm:text-xs md:text-xs lg:text-xs xl:text-xs">** Exampel på bilforsikring pris</p>
         </div>
       </div>
-
-      {/* <Graph /> */}
+      
     </div>
   );
 };
