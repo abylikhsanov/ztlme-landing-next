@@ -29,7 +29,7 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
                   className="absolute top-0 left-0 w-full h-full object-cover -z-10"
                   style={{top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}
               >
-                  <source src="/cow.mp4" type="video/mp4"/>
+                  <source src="/cow_hd.mp4" type="video/mp4"/>
                   Your browser does not support the video tag.
               </video>
 
