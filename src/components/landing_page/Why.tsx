@@ -11,9 +11,10 @@ export const Why = () => {
 
     return (
         <div className="flex flex-col m-12 max-w-7xl mx-auto">
-            <div id={"About"} className="flex flex-col items-center p-4 max-w-3xl mx-auto rounded-lg mb-24">
-                <h1 className="font-bold font-dm text-3xl mb-4">Hvorfor ztl.me?</h1>
-                <p className="text-sm sm:text-xl md:text-xl font-dm text-center text-gray-500">
+            <div id={"About"}
+                 className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
+                <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Hvorfor ztl.me?</h1>
+                <p className="text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed">
                     ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40 000
                     selvforsikrere. Hvorfor akkurat 40 000 selvforsikrere? Hvis
                     man tar utgangspunkt i en gjennomsnittlig forsikringskunde i Norge sier matematiske
@@ -24,24 +25,26 @@ export const Why = () => {
                     selvforsikrere til gode i form av avkastning.
                     Ytterligere til gode.
                 </p>
+                {/* Add a button or call to action if applicable */}
+                {/* <button className="mt-6 bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300">Learn More</button> */}
             </div>
 
             <div id={"Advantages"}>
-            {/* First feature */}
-            <Features
-                header="Trygghet med fordeler"
-                text="Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap. Som vi viste gjennom bileksempelet er det store summer som er ubenyttede, og som utgjør kjernen i forsikringsselskapene forretningsmodell. I motsetning til de store tradisjonelle forsikringsselskapene hvor disse midlene havne i eiernes lommer, fordeles midlene på ztl.mes selvforsikrere."
-                smallText="Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap."
-                featureOpened={firstFeatureOpened}
-                setFirstFeatureOpened={setFirstFeatureOpened}
-                reversedOrder={false}
-                image="/body_1.png"
-            />
+                {/* First feature */}
+                <Features
+                    header="Trygghet med fordeler"
+                    text="Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap. Som vi viste gjennom bileksempelet er det store summer som er ubenyttede, og som utgjør kjernen i forsikringsselskapene forretningsmodell. I motsetning til de store tradisjonelle forsikringsselskapene hvor disse midlene havne i eiernes lommer, fordeles midlene på ztl.mes selvforsikrere."
+                    smallText="Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap."
+                    featureOpened={firstFeatureOpened}
+                    setFirstFeatureOpened={setFirstFeatureOpened}
+                    reversedOrder={false}
+                    image="/body_1.png"
+                />
 
-            {/* Second feature */}
-            <Features
-                header="Vårt løfte"
-                text="Når du flytter dine forsikringer til ztl.me gir vi deg en garanti:  du vil betale det samme eller mindre som du gjør i dag, og ha like gode betingelser. 
+                {/* Second feature */}
+                <Features
+                    header="Vårt løfte"
+                    text="Når du flytter dine forsikringer til ztl.me gir vi deg en garanti:  du vil betale det samme eller mindre som du gjør i dag, og ha like gode betingelser. 
         I tillegg har du mulighet til å få tilbake en del av pengen med avkastning! Det kan ikke forsikringsselskapene tilby. 
         Grunnen er at det er selvforsikrerne i ztl.me som eier midlene selv.  Jo fortere du flytter forsikringen din til ztl.me, jo mer lønnsomt kan det bli."
                 smallText="Du vil betale det samme eller mindre som du gjør i dag"

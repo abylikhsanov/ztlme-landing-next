@@ -18,9 +18,9 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
 
   return (
 
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden rounded-3xl mt-24">
           {/* Responsive aspect ratio for the video container */}
-          <div className="w-full h-96 mt-36 sm:h-auto sm:mt-0 sm:aspect-video rounded-lg shadow-lg overflow-hidden">
+          <div className="w-full h-96 mt-36 sm:h-auto sm:mt-0 sm:aspect-video overflow-hidden">
               {/* Background video */}
               <video
                   autoPlay
