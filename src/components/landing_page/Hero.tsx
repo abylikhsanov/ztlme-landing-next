@@ -20,7 +20,7 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
 
       <div className="relative w-full overflow-hidden">
           {/* Responsive aspect ratio for the video container */}
-          <div className="w-full h-96 mt-36 sm:h-auto sm:mt-0 sm:aspect-video"> {/* Adjusted for 16:9 aspect ratio */}
+          <div className="w-full h-96 mt-36 sm:h-auto sm:mt-0 sm:aspect-video rounded-lg shadow-lg overflow-hidden">
               {/* Background video */}
               <video
                   autoPlay
@@ -40,25 +40,24 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
               <div
                   className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-4 text-center z-10">
                   <div className="w-full px-4 md:px-8 max-w-4xl mx-auto">
-                      <h1 className='text-gray-100 text-2xl md:text-4xl lg:text-6xl font-bold'>
+                      <h1 className='text-gray-100 text-2xl md:text-4xl lg:text-6xl font-bold tracking-wider leading-normal'>
                           Fremtidens forsikring for deg som ønsker{' '}
                           <span className='text-blue-500'>trygghet</span>{' '}
                           og{' '}
                           <span className='text-blue-500'>lønnsom avkastning</span>
                       </h1>
-                      <p className='mt-4 mb-8 text-gray-100 text-xs md:text-lg lg:text-xl font-semibold'>
+                      <p className='mt-4 mb-8 text-gray-100 text-sm md:text-lg lg:text-xl font-medium'>
                           Si farvel til tradisjonelle profittjagende forsikringsselskaper og hei til ztl.me - den
-                          nyskapende
-                          løsningen som tilbyr rimelig
+                          nyskapende løsningen som tilbyr rimelig
                           dekning med full transparens og avkastning.
                       </p>
-                      <Button variant={"default"} className="bg-blue-500 text-xs md:text-sm lg:text-md">Bli med
-                          -{">"}</Button>
+                      <Button variant={"default"}
+                              className="bg-blue-500 text-sm md:text-md lg:text-lg hover:bg-blue-600 transition-colors shadow px-6 py-2 rounded-full">Bli
+                          med -{">"}</Button>
                   </div>
               </div>
           </div>
       </div>
-
 
   );
 };

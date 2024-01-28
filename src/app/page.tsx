@@ -11,6 +11,7 @@ import {Footer} from "@/components/landing_page/Footprint"
 
 import {GetLoginLink} from "@/api/BackendAPI"
 import MaxWidthComponent from "@/components/MaxWidthComponent";
+import {HeaderButtons} from "@/components/landing_page/HeaderButtons";
 
 const LandingPage = () => {
 

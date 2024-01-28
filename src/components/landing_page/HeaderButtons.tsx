@@ -7,7 +7,7 @@ import { useState } from "react"
 
 import { GetLoginLink } from "../../api/BackendAPI"
 
-export const Header = ({handleClick}:{handleClick: () => void}) => {
+export const HeaderButtons = ({handleClick}:{handleClick: () => void}) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const showB = false;
@@ -19,7 +19,7 @@ export const Header = ({handleClick}:{handleClick: () => void}) => {
 
 
             {/* Desktop Menu */}
-            <div className="hidden sm:flex space-x-6">
+            <div className="hidden justify-center items-center sm:flex space-x-6">
                 <span className='font-dm cursor-pointer hover:text-blue-700'>Home</span>
                 <span className="font-dm ml-6 cursor-pointer hover:text-blue-700">About</span>
                 <span className="font-dm ml-6 cursor-pointer hover:text-blue-700">Contact</span>
