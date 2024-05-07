@@ -5,8 +5,6 @@ import { Button } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import { useState } from "react"
 
-import { GetLoginLink } from "../../api/BackendAPI"
-
 export const HeaderButtons = ({handleClick}:{handleClick: () => void}) => {
     const [menuOpen, setMenuOpen] = useState(false);
 
