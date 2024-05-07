@@ -22,7 +22,7 @@ export const Hero = () => {
     
       const handleClick = async () => {
         try {
-            window.location.href = `${GetUrlRoot}/api/Signature/sign`;
+            window.location.href = `${GetUrlRoot()}/api/Signature/sign`;
         } catch (error) {
             console.error("error");
         }

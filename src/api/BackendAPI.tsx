@@ -29,7 +29,7 @@ export function GetUrlRoot() {
 
 export async function GetAuthStatus() {
   //const data = await getResponse("https://75a9-84-48-48-163.ngrok-free.app/api/Auth/isAuth", "GET");
-  const data = await getResponse(`${GetUrlRoot}/api/Auth/isAuth`, "GET");
+  const data = await getResponse(`${GetUrlRoot()}/api/Auth/isAuth`, "GET");
   if (!data) {
     console.error("Data is null");
     throw Error(`Data is null`);

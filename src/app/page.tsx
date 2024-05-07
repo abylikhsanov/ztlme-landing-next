@@ -17,9 +17,8 @@ const LandingPage = () => {
 
     const handleSignUpClick = async () => {
         try {
-            console.log("tir");
-            // const link = await GetLoginLink();
-            window.location.href = `${GetUrlRoot}/api/Auth/bankid`;
+            console.log(`${GetUrlRoot()}`);
+            window.location.href = `${GetUrlRoot()}/api/Auth/bankid`;
 
         } catch (error) {
 
