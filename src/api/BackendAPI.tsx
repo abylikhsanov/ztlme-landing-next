@@ -2,9 +2,9 @@ const getResponse = async (url: string, method: string) => {
   const token = localStorage.getItem("token");
   const response = await fetch(url, {
     method: method,
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
+   // headers: {
+   //   Authorization: `Bearer ${token}`,
+   // },
     credentials: "include",
   });
 
@@ -23,21 +23,21 @@ const getResponse = async (url: string, method: string) => {
 };
 
 export const GetLoginLink = async () => {
-  const data = await getResponse("https://ztlme-6a589cc5f144.herokuapp.com/auth/startAuth", "GET");
+  const data = await getResponse("https://ztlme-api-05a97b131bda.herokuapp.com/api/Auth/bankid", "GET");
   // const data = await getResponse("http://localhost:3005/auth/startAuth", "GET");
   if (!data) {
     console.error("Data is null");
     throw Error(`Data is null`);
   }
-  return data.authenticationUrl;
+  return data.data;
 };
 
 export const GetDocumentLink = async () => {
-  const data = await getResponse("https://ztlme-6a589cc5f144.herokuapp.com/signature/sign", "GET");
+  const data = await getResponse("https://ztlme-api-05a97b131bda.herokuapp.com/api/Signature/sign", "GET");
   if (!data) {
     console.error("Data is null");
     throw Error("Data is null");
   }
 
-  return data.href;
+  return data.data;
 }
