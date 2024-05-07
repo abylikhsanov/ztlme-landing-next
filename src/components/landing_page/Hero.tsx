@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
-import { GetLoginLink } from "../../api/BackendAPI"
+import { GetUrlRoot } from "../../api/BackendAPI"
 import MaxWidthComponent from "@/components/MaxWidthComponent";
 import {buttonVariants} from "@/components/ui/button";
 import { Button } from "@/components/ui/button"
@@ -53,7 +53,8 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
                           dekning med full transparens og avkastning.
                       </p>
                       <Button variant={"default"}
-                              className="bg-blue-500 text-sm md:text-md lg:text-lg hover:bg-blue-600 transition-colors shadow px-6 py-2 rounded-full">Bli
+                              className="bg-blue-500 text-sm md:text-md lg:text-lg hover:bg-blue-600 transition-colors shadow px-6 py-2 rounded-full"
+                      onClick={handleClick}>Bli
                           med -{">"}</Button>
                   </div>
               </div>

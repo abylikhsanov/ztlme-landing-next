@@ -22,22 +22,17 @@ const getResponse = async (url: string, method: string) => {
   return data;
 };
 
-export const GetLoginLink = async () => {
-  const data = await getResponse("https://ztlme-api-05a97b131bda.herokuapp.com/api/Auth/bankid", "GET");
-  // const data = await getResponse("http://localhost:3005/auth/startAuth", "GET");
+export function GetUrlRoot() {
+  return "https://ztlme-api-05a97b131bda.herokuapp.com";
+  //return "https://75a9-84-48-48-163.ngrok-free.app";
+}
+
+export async function GetAuthStatus() {
+  //const data = await getResponse("https://75a9-84-48-48-163.ngrok-free.app/api/Auth/isAuth", "GET");
+  const data = await getResponse(`${GetUrlRoot}/api/Auth/isAuth`, "GET");
   if (!data) {
     console.error("Data is null");
     throw Error(`Data is null`);
   }
-  return data.data;
-};
-
-export const GetDocumentLink = async () => {
-  const data = await getResponse("https://ztlme-api-05a97b131bda.herokuapp.com/api/Signature/sign", "GET");
-  if (!data) {
-    console.error("Data is null");
-    throw Error("Data is null");
-  }
-
   return data.data;
 }

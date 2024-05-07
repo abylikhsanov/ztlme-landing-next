@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { Button } from "antd";
 import Image from "next/image";
 
-import { GetDocumentLink } from "../../api/BackendAPI"
+import { GetUrlRoot } from "../../api/BackendAPI"
 
 export const Hero = () => {
 
@@ -22,8 +22,7 @@ export const Hero = () => {
     
       const handleClick = async () => {
         try {
-            const link = await GetDocumentLink();
-            window.location.href = link;
+            window.location.href = `${GetUrlRoot}/api/Signature/sign`;
         } catch (error) {
             console.error("error");
         }

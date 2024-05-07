@@ -9,7 +9,7 @@ import {Why} from "@/components/landing_page/Why"
 import {FAQ} from "@/components/landing_page/FAQ"
 import {Footer} from "@/components/landing_page/Footprint"
 
-import {GetLoginLink} from "@/api/BackendAPI"
+import {GetUrlRoot} from "@/api/BackendAPI"
 import MaxWidthComponent from "@/components/MaxWidthComponent";
 import {HeaderButtons} from "@/components/landing_page/HeaderButtons";
 
@@ -17,8 +17,9 @@ const LandingPage = () => {
 
     const handleSignUpClick = async () => {
         try {
-            const link = await GetLoginLink();
-            window.location.href = link;
+            console.log("tir");
+            // const link = await GetLoginLink();
+            window.location.href = `${GetUrlRoot}/api/Auth/bankid`;
 
         } catch (error) {
 
