@@ -1,32 +1,40 @@
-const getResponse = async (url: string, method: string) => {
-  const token = localStorage.getItem("token");
-  const response = await fetch(url, {
+async function getResponse(url: string, method: string, data?: any) {
+  const headers: HeadersInit = {
+    'Content-Type': 'application/json'
+  };
+
+  const options: RequestInit = {
     method: method,
-   // headers: {
-   //   Authorization: `Bearer ${token}`,
-   // },
+    headers: headers,
     credentials: "include",
-  });
-
-  if (!response) {
-    console.error("No response");
-    throw Error("No response")
+    body: JSON.stringify(data)
   }
 
-  const data = await response.json();
-  if (!data) {
-    console.error("No data in response");
-    throw Error("No data in response")
+  if (method === 'POST' && data) {
+    options.body = JSON.stringify(data);
   }
 
-  return data;
-};
+  try {
+    const response = await fetch(url, options);
+    const responseData = await response.json();
+    return responseData;
+  } catch (error) {
+    console.error('Request failed:', error);
+    throw error;  // Rethrow to let the caller handle it
+  }
+}
 
 export function GetUrlRoot() {
   return "https://ztlme-api-05a97b131bda.herokuapp.com";
   //return "https://75a9-84-48-48-163.ngrok-free.app";
 }
 
+export async function GetSignUpStatus(payload: any) {
+  const data = await getResponse(`${GetUrlRoot()}/api/Auth/signup`, "POST", payload)
+  return data;
+}
+
+// Not used
 export async function GetAuthStatus() {
   //const data = await getResponse("https://75a9-84-48-48-163.ngrok-free.app/api/Auth/isAuth", "GET");
   const data = await getResponse(`${GetUrlRoot()}/api/Auth/isAuth`, "GET");

@@ -5,12 +5,9 @@ import { useEffect , useState} from 'react';
 import { useRouter } from 'next/navigation';
 import { GetAuthStatus } from "@/api/BackendAPI";
 import { Header } from "@/components/landing_page/Header"
-import { Hero } from "@/components/signedup_page/Hero"
+import { HeroSignedUp } from "@/components/signup_successful/HeroSignedUp"
 import { Footer } from "@/components/landing_page/Footprint"
-
-const handleViewDocumentClick = () => {
-
-}
+import {handleJoinButtonClick, handleSeDokumentClick} from "@/methods/HandleButtonClicks";
 
 const SignupPage = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -22,13 +19,13 @@ const SignupPage = () => {
             try {
                 const isAuthenticated = await GetAuthStatus();
                 if (!isAuthenticated) {
-                    router.push('/signed_up');
+                    router.push('/');
                 } else {
                     setIsAuthenticated(true);
                 }
             } catch (error) {
                 console.error('Failed to check authentication:', error);
-                router.push('/signed_up');
+                router.push('/');
             } finally {
                 setIsLoading(false);
             }
@@ -46,8 +43,8 @@ const SignupPage = () => {
     }
     return (
         <div>
-            <Header handleClick={handleViewDocumentClick}/>
-            <Hero />
+            <Header handleClick={handleJoinButtonClick}/>
+            <HeroSignedUp handleClick={handleSeDokumentClick}/>
             <Footer />
         </div>
     )

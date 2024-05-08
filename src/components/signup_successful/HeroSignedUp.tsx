@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { GetUrlRoot } from "../../api/BackendAPI"
 
-export const Hero = () => {
+export const HeroSignedUp = ({handleClick}:{handleClick: () => void}) => {
 
     const [token, setToken] = useState("");
 
@@ -19,14 +19,6 @@ export const Hero = () => {
           setToken(fragment);
         }
       }, []);
-    
-      const handleClick = async () => {
-        try {
-            window.location.href = `${GetUrlRoot()}/api/Signature/sign`;
-        } catch (error) {
-            console.error("error");
-        }
-      }
 
   return (
     <div className="flex flex-col m-40 items-center justify-center max-w-5xl mx-auto">
