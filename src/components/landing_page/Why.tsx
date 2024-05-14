@@ -3,6 +3,7 @@
 import {useState} from "react";
 import Image from "next/image";
 import {Button} from "@/components/ui/button"
+import {motion} from 'framer-motion';
 
 export const Why = () => {
     const [firstFeatureOpened, setFirstFeatureOpened] = useState(false);
@@ -11,8 +12,11 @@ export const Why = () => {
 
     return (
         <div className="flex flex-col m-12 max-w-7xl mx-auto">
-            <div id={"About"}
-                 className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
+            <motion.div id={"About"} 
+                        initial={{opacity: 0.0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}
+                        className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
                 <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Hvorfor ztl.me?</h1>
                 <p className="text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed">
                     ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40 000
@@ -27,9 +31,12 @@ export const Why = () => {
                 </p>
                 {/* Add a button or call to action if applicable */}
                 {/* <button className="mt-6 bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300">Learn More</button> */}
-            </div>
+            </motion.div>
 
-            <div id={"Advantages"}>
+            <motion.div id={"Advantages"}
+                        initial={{opacity: 0.0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}>
                 {/* First feature */}
                 <Features
                     header="Trygghet med fordeler"
@@ -40,39 +47,46 @@ export const Why = () => {
                     reversedOrder={false}
                     image="/body_1.png"
                 />
+            </motion.div>
 
+            <motion.div initial={{opacity: 0.0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}>
                 {/* Second feature */}
                 <Features
                     header="Vårt løfte"
                     text="Når du flytter dine forsikringer til ztl.me gir vi deg en garanti:  du vil betale det samme eller mindre som du gjør i dag, og ha like gode betingelser. 
         I tillegg har du mulighet til å få tilbake en del av pengen med avkastning! Det kan ikke forsikringsselskapene tilby. 
         Grunnen er at det er selvforsikrerne i ztl.me som eier midlene selv.  Jo fortere du flytter forsikringen din til ztl.me, jo mer lønnsomt kan det bli."
-                smallText="Du vil betale det samme eller mindre som du gjør i dag"
-                featureOpened={secondFeatureOpened}
-                setFirstFeatureOpened={setSecondFeatureOpened}
-                reversedOrder={true}
-                image="/body_2.png"
-            />
+                    smallText="Du vil betale det samme eller mindre som du gjør i dag"
+                    featureOpened={secondFeatureOpened}
+                    setFirstFeatureOpened={setSecondFeatureOpened}
+                    reversedOrder={true}
+                    image="/body_2.png"
+                />
+            </motion.div>
 
-            {/* Third feature */}
-            <Features
-                header="Styrk felleskapet"
-                text="De store tradisjonelle forsikringsselskapene skiller ikke på kunde i form av lojalitet, størrelse eller atferd. 
+            <motion.div initial={{opacity: 0.0}}
+                        whileInView={{opacity: 1}}
+                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}>
+
+                {/* Third feature */}
+                <Features
+                    header="Styrk felleskapet"
+                    text="De store tradisjonelle forsikringsselskapene skiller ikke på kunde i form av lojalitet, størrelse eller atferd. 
         Alle innbetalingen går til eierne uansett. Har du en skade på f.eks. bil kan du oppleve at forsikringspremien blir høyere, men det påvirker ikke en annen kunde som ikke har skade.
         Hovedfokus er på profitt, ikke på dine faktiske behov. I ztl.me vil en skadefri eller skadebegensende atferd lønne seg for alle. Da blir det mer å fordele til felleskapet. 
         I en tid hvor prisene stiger og ting blir dyrere tror vi på at dette er en modell som styrker fellesskapet og bidrar til demokratisering av forsikringer"
-                smallText="I ztl.me vil en skadefri eller skadebegensende atferd lønne seg for alle."
-                featureOpened={thirdFeatureOpened}
-                setFirstFeatureOpened={setThirdFeatureOpened}
-                reversedOrder={false}
-                image="/body_3.png"
-            />
-
-            {/* Fourth feature */}
-            </div>
-
-        </div>
-    );
+                    smallText="I ztl.me vil en skadefri eller skadebegensende atferd lønne seg for alle."
+                    featureOpened={thirdFeatureOpened}
+                    setFirstFeatureOpened={setThirdFeatureOpened}
+                    reversedOrder={false}
+                    image="/body_3.png"
+                />
+            </motion.div>
+</div>
+)
+    ;
 };
 
 const Features = ({

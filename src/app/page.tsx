@@ -2,14 +2,13 @@
 
 import "../app/globals.css"
 
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {Header} from "@/components/landing_page/Header"
 import {Hero} from "@/components/landing_page/Hero"
 import {Calculator} from "@/components/landing_page/Calculator"
 import {Why} from "@/components/landing_page/Why"
 import {FAQ} from "@/components/landing_page/FAQ"
 import {Footer} from "@/components/landing_page/Footprint"
-import {handleJoinButtonClick} from "@/methods/HandleButtonClicks";
 import {SignUpModal} from "@/components/landing_page/PopUp";
 import {HeroSignedUp} from "@/components/signup_successful/HeroSignedUp";
 import {GetUrlRoot} from "@/api/BackendAPI";
@@ -17,7 +16,7 @@ import {GetUrlRoot} from "@/api/BackendAPI";
 const LandingPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [currentPage, setCurrentPage] = useState("main");
-    
+    const [scrollPosition, setScrollPosition] = useState(0);
     const handleModal = () => {
         setShowModal(!showModal);
     }
@@ -71,6 +70,21 @@ const LandingPage = () => {
                 )
         }
     }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const position = window.scrollY;
+            console.log(position);
+            setScrollPosition(position);
+            
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <>
