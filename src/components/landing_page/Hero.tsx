@@ -1,7 +1,10 @@
 'use client'
 
+import { motion} from "framer-motion";
 import { Button } from "@/components/ui/button"
 import { CardBody, CardContainer, CardItem } from "@/lib/CardContainer";
+import { AuroraBackground} from "@/lib/aurora-background";
+import {AnimatedPlaceholders} from "@/lib/text-vanish";
 
 const mainText = "Fremtidens forsikring for deg som ønsker trygghet og lønnsom avkastning"
 
@@ -61,3 +64,44 @@ export const Hero = ({handleClick}:{handleClick: () => void}) => {
       </CardContainer>
   );
 };
+
+export function AuroraBackgroundDemo({handleClick}:{handleClick: () => void}) {
+    const placeholders = [
+        "Gjensidige",
+        "If",
+        "Tryg",
+        "DNB Forsikring",
+        "Alle andre"
+    ];
+    
+    return (
+        <AuroraBackground>
+            <motion.div
+                initial={{ opacity: 0.0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                    delay: 0.3,
+                    duration: 0.8,
+                    ease: "easeInOut",
+                }}
+                className="relative flex flex-col gap-4 items-center justify-center px-4"
+            >
+                <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+                    <div className="flex flex-row text-center">
+                        Glem <AnimatedPlaceholders placeholders={placeholders} />
+                    </div>
+                    Dekke bilen din på en{' '}
+                    <span className='text-blue-500'>ny</span>{' '}
+                    måte
+                </div>
+                <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 text-center">
+                    Uten problem, uten stress
+                </div>
+                <button className="bg-blue-700 dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2"
+                        onClick={handleClick}>
+                    Hva mener du?
+                </button>
+            </motion.div>
+        </AuroraBackground>
+    );
+}

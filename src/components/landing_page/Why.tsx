@@ -3,19 +3,24 @@
 import {useState} from "react";
 import Image from "next/image";
 import {Button} from "@/components/ui/button"
-import {motion} from 'framer-motion';
+import { StickyScroll} from "@/lib/sticky-scroll-reveal";
 
 export const Why = () => {
+    return (
+        <div className="">
+            <StickyScroll content={content} />
+        </div>
+    )
+}
+
+export const Ahy = () => {
     const [firstFeatureOpened, setFirstFeatureOpened] = useState(false);
     const [secondFeatureOpened, setSecondFeatureOpened] = useState(false);
     const [thirdFeatureOpened, setThirdFeatureOpened] = useState(false);
 
     return (
         <div className="flex flex-col m-12 max-w-7xl mx-auto">
-            <motion.div id={"About"} 
-                        initial={{opacity: 0.0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}
+            <div
                         className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
                 <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Hvorfor ztl.me?</h1>
                 <p className="text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed">
@@ -31,12 +36,9 @@ export const Why = () => {
                 </p>
                 {/* Add a button or call to action if applicable */}
                 {/* <button className="mt-6 bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300">Learn More</button> */}
-            </motion.div>
+            </div>
 
-            <motion.div id={"Advantages"}
-                        initial={{opacity: 0.0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}>
+            <div>
                 {/* First feature */}
                 <Features
                     header="Trygghet med fordeler"
@@ -47,11 +49,9 @@ export const Why = () => {
                     reversedOrder={false}
                     image="/body_1.png"
                 />
-            </motion.div>
+            </div>
 
-            <motion.div initial={{opacity: 0.0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}>
+            <div>
                 {/* Second feature */}
                 <Features
                     header="Vårt løfte"
@@ -64,11 +64,9 @@ export const Why = () => {
                     reversedOrder={true}
                     image="/body_2.png"
                 />
-            </motion.div>
+            </div>
 
-            <motion.div initial={{opacity: 0.0}}
-                        whileInView={{opacity: 1}}
-                        transition={{duration: 0.5, delay: 1.0, ease: "easeOut"}}>
+            <div>
 
                 {/* Third feature */}
                 <Features
@@ -83,11 +81,83 @@ export const Why = () => {
                     reversedOrder={false}
                     image="/body_3.png"
                 />
-            </motion.div>
+            </div>
 </div>
 )
     ;
 };
+
+const content = [
+    {
+        title: "Hvorfor ztl.me?",
+        description: "ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40 000\n" +
+            "                selvforsikrere. Hvorfor akkurat 40 000 selvforsikrere? Hvis\n" +
+            "                man tar utgangspunkt i en gjennomsnittlig forsikringskunde i Norge sier matematiske\n" +
+            "                forsikringsmodeller at man trenger 33 000 kunder for å kunne drive\n" +
+            "                lønnsom forsikringsvirksomhet. Dette inkluderer alle utbetalinger til skade og tap, samt drift og\n" +
+            "                avkastning på egenkapitalen. Vi har derfor lagt oss\n" +
+            "                på et litt høyere nivå slik at ztl.me har en ekstra god margin, noe som uansett kommer ztl.mes\n" +
+            "                selvforsikrere til gode i form av avkastning.\n" +
+            "                Ytterligere til gode.",
+        content: (
+            <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+                <Image
+                    src="/body_1.png"
+                    width={300}
+                    height={300}
+                    className="h-full w-full object-cover"
+                    alt="linear board demo"
+                />
+            </div>
+        ),
+    },
+    {
+        title: "Trygghet med fordeler",
+        description:
+            "Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap. Som vi viste gjennom bileksempelet er det store summer som er ubenyttede, og som utgjør kjernen i forsikringsselskapene forretningsmodell. I motsetning til de store tradisjonelle forsikringsselskapene hvor disse midlene havne i eiernes lommer, fordeles midlene på ztl.mes selvforsikrere.",
+        content: (
+            <div className="h-full w-full  flex items-center justify-center text-white">
+                <Image
+                    src="/body_2.png"
+                    width={300}
+                    height={300}
+                    className="h-full w-full object-cover"
+                    alt="linear board demo"
+                />
+            </div>
+        ),
+    },
+    {
+        title: "",
+        description: "",
+        content: (
+            <div className="h-full w-full  flex items-center justify-center text-white">
+                <Image
+                    src="/body_3.png"
+                    width={300}
+                    height={300}
+                    className="h-full w-full object-cover"
+                    alt="linear board demo"
+                />
+            </div>
+        ),
+    },
+    {
+        title: "",
+        description: "",
+        content: (
+            <div className="h-full w-full  flex items-center justify-center text-white">
+                <Image
+                    src="/body_1.png"
+                    width={300}
+                    height={300}
+                    className="h-full w-full object-cover"
+                    alt="linear board demo"
+                />
+            </div>
+        ),
+    },
+]
 
 const Features = ({
                       header,

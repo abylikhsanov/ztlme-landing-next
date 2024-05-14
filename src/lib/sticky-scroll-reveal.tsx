@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { AuroraBackground } from "@/lib/aurora-background";
 
 export const StickyScroll = ({
                                  content,
@@ -41,9 +42,9 @@ export const StickyScroll = ({
     });
 
     const backgroundColors = [
-        "var(--slate-900)",
-        "var(--black)",
-        "var(--neutral-900)",
+        "var(--white)",
+        "var(--white)",
+        "var(--white)",
     ];
     const linearGradients = [
         "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
@@ -69,7 +70,7 @@ export const StickyScroll = ({
                                 animate={{
                                     opacity: activeCard === index ? 1 : 0.3,
                                 }}
-                                className="text-2xl font-bold text-slate-100"
+                                className="text-2xl font-bold text-blue-700"
                             >
                                 {item.title}
                             </motion.h2>
@@ -80,7 +81,7 @@ export const StickyScroll = ({
                                 animate={{
                                     opacity: activeCard === index ? 1 : 0.3,
                                 }}
-                                className="text-kg text-slate-300 max-w-sm mt-10"
+                                className="text-kg text-black max-w-sm mt-10"
                             >
                                 {item.description}
                             </motion.p>
