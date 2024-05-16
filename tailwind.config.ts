@@ -86,6 +86,10 @@ const config = {
                 "accordion-up": "accordion-up 0.2s ease-out",
                 aurora: "aurora 60s linear infinite",
             },
+            width: {
+                '400vw': '400vw',
+                '-300vw': '-300vw'
+              },
         },
     },
     plugins: [

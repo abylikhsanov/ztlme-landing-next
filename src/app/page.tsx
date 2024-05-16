@@ -4,9 +4,9 @@ import "../app/globals.css"
 
 import {useState, useEffect} from "react";
 import {Header} from "@/components/landing_page/Header"
-import {AuroraBackgroundDemo, Hero} from "@/components/landing_page/Hero"
+import {AuroraBackgroundDemo} from "@/components/landing_page/Hero"
 import {Calculator, TaxCalculator} from "@/components/landing_page/Calculator"
-import {Why} from "@/components/landing_page/Why"
+import {Why, ScrollComponent} from "@/components/landing_page/Why"
 import {FAQ} from "@/components/landing_page/FAQ"
 import {Footer} from "@/components/landing_page/Footprint"
 import {SignUpModal} from "@/components/landing_page/PopUp";
@@ -45,7 +45,7 @@ const LandingPage = () => {
                     <div>
                         {showModal && <SignUpModal onClose={handleModal} setPage={handlePageChange}/>}
                         <AuroraBackgroundDemo handleClick={handleModal}/>
-                        <Why/>
+                        <ScrollComponent/>
                         <TaxCalculator/>
                         <FAQ/>
                     </div>
