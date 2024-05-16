@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { CardBody, CardContainer, CardItem } from "@/lib/CardContainer";
 import { AuroraBackground} from "@/lib/aurora-background";
 import {AnimatedPlaceholders} from "@/lib/text-vanish";
+import { Typewriter, Cursor } from 'react-simple-typewriter';
 
 const mainText = "Fremtidens forsikring for deg som ønsker trygghet og lønnsom avkastning"
 
@@ -86,10 +87,19 @@ export function AuroraBackgroundDemo({handleClick}:{handleClick: () => void}) {
                 }}
                 className="relative flex flex-col gap-4 items-center justify-center px-4"
             >
+                <div className="text-3xl md:text-7xl font-bold dark:text-white text-center flex flex-row">
+                    Glem  <p className="ml-4 text-red-700">
+                        <Typewriter 
+                        words={["If", "Gjensidige", "DNB", "Tryg"]} 
+                        loop={true} 
+                        typeSpeed={70} 
+                        deleteSpeed={50} 
+                        delaySpeed={1000} /> 
+                        
+                        </p>
+                        <Cursor cursorStyle="|" /> 
+                </div>
                 <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-                    <div className="flex flex-row text-center">
-                        Glem <AnimatedPlaceholders placeholders={placeholders} />
-                    </div>
                     Dekke bilen din på en{' '}
                     <span className='text-blue-500'>ny</span>{' '}
                     måte
