@@ -11,8 +11,8 @@ export const Header = ({handleClick}:{handleClick: () => void}) => {
 
     return (
 
-        <div className="flex max-w-4xl justify-center items-center bg-white">
-            <nav className="fixed bg-white dark:bg-gray-900 w-full self-center justify-center items-center z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 rounded-3xl">
+        <div className="flex w-full justify-center items-center bg-white">
+            <nav className="sticky bg-white dark:bg-gray-900 w-full self-center justify-center items-center z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 rounded-3xl">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <div className="flex items-center space-x-3 rtl:space-x-reverse">
                         <Image src="/ztlme_logo.png" className="h-8" alt="Company Logo" width={120} height={44} />

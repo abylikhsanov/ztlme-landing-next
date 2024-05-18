@@ -10,7 +10,12 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@nextui-org/navbar": "^2.0.30",
+    "@nextui-org/react": "^2.3.6",
+    "@nextui-org/system": "^2.1.2",
+    "@nextui-org/theme": "^2.2.3",
     "@radix-ui/react-slot": "^1.0.2",
+    "@rive-app/react-canvas": "^4.9.5",
     "antd": "^5.9.4",
     "apexcharts": "^3.45.1",
     "class-variance-authority": "^0.7.0",

@@ -1,9 +1,9 @@
 'use client'
 
 import "../app/globals.css"
+import { Instrument_Sans } from "next/font/google";
 
 import {useState, useEffect} from "react";
-import {Header} from "@/components/landing_page/Header"
 import {AuroraBackgroundDemo} from "@/components/landing_page/Hero"
 import {Calculator, TaxCalculator} from "@/components/landing_page/Calculator"
 import {Why, ScrollComponent} from "@/components/landing_page/Why"
@@ -12,6 +12,13 @@ import {Footer} from "@/components/landing_page/Footprint"
 import {SignUpModal} from "@/components/landing_page/PopUp";
 import {HeroSignedUp} from "@/components/signup_successful/HeroSignedUp";
 import {GetUrlRoot} from "@/api/BackendAPI";
+import {NavbarComponent} from "@/components/landing_page/Navbar";
+import { ScrollTest } from "@/components/landing_page/ScrollExplain";
+import { PieAnimation } from "@/components/landing_page/PieAnimation";
+
+const instrumentSans = Instrument_Sans({
+    subsets: ['latin'],
+})
 
 const LandingPage = () => {
     const [showModal, setShowModal] = useState(false);
@@ -46,6 +53,7 @@ const LandingPage = () => {
                         {showModal && <SignUpModal onClose={handleModal} setPage={handlePageChange}/>}
                         <AuroraBackgroundDemo handleClick={handleModal}/>
                         <ScrollComponent/>
+                        <ScrollTest />
                         <TaxCalculator/>
                         <FAQ/>
                     </div>
@@ -71,27 +79,12 @@ const LandingPage = () => {
         }
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const position = window.scrollY;
-            console.log(position);
-            setScrollPosition(position);
-            
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
-        <>
-            <Header handleClick={handleModal}/>
+        <main>
+            <NavbarComponent handleClick={handleModal}/>
             {renderPage()}
             <Footer/>
-        </>
+        </main>
     )
 }
 

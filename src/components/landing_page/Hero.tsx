@@ -4,7 +4,6 @@ import { motion} from "framer-motion";
 import { Button } from "@/components/ui/button"
 import { CardBody, CardContainer, CardItem } from "@/lib/CardContainer";
 import { AuroraBackground} from "@/lib/aurora-background";
-import {AnimatedPlaceholders} from "@/lib/text-vanish";
 import { Typewriter, Cursor } from 'react-simple-typewriter';
 
 const mainText = "Fremtidens forsikring for deg som ønsker trygghet og lønnsom avkastning"
@@ -104,7 +103,7 @@ export function AuroraBackgroundDemo({handleClick}:{handleClick: () => void}) {
                     <span className='text-blue-500'>ny</span>{' '}
                     måte
                 </div>
-                <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 text-center">
+                <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4 text-center text-weight-100">
                     Uten problem, uten stress
                 </div>
                 <button className="bg-blue-700 dark:bg-white rounded-full w-fit text-white dark:text-black px-4 py-2"

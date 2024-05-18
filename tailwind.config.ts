@@ -1,4 +1,6 @@
 import type {Config} from "tailwindcss"
+const {nextui} = require("@nextui-org/react");
+
 const {
     default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
@@ -11,7 +13,8 @@ const config = {
         './components/**/*.{ts,tsx}',
         './app/**/*.{ts,tsx}',
         './src/**/*.{ts,tsx}',
-        "./public/**/*.html"
+        "./public/**/*.html",
+        "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
     ],
     prefix: "",
     theme: {
@@ -88,7 +91,8 @@ const config = {
             },
             width: {
                 '400vw': '400vw',
-                '-300vw': '-300vw'
+                '-300vw': '-300vw',
+                '120vh': '120vh'
               },
         },
     },
@@ -97,6 +101,7 @@ const config = {
             charts: true,
         }),
         addVariablesForColors,
+        nextui()
     ],
 } satisfies Config
 
