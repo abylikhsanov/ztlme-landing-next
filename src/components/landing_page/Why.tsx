@@ -16,21 +16,6 @@ export const ScrollComponent = () => {
   const [thirdFeatureOpened, setThirdFeatureOpened] = useState(false);
   gsap.registerPlugin(ScrollTrigger);
 
-  const words = `Mary jobber som CVC-investor i et stort energiselskap. Hun har forsikret bilen sin med et tradisjonelt
-                forsikringsselskap og betaler 10000 NOK per år. På vei hjem fra jobb stoppet hun ved matbutikken. Noen
-                kjørte på Marys Tesla da den var parkert, og ripet opp fordøren. Bilen trenger nå en lakkering, som vil
-                koste ca. 5000 NOK.
-                Mary ringer sitt tradisjonelle forsikringsselskap, som kan dekke kostnaden. Men Mary må betale 8000 NOK
-                i egenandel og vil få sin "bonus" redusert fra 80% til 70%. Dette vil koste henne ekstra 2000 NOK per år
-                de neste 4 årene, forutsatt at hun ikke har flere skader.
-                Mary bruker 4 timer på telefonen med kundeservice (hvorav 3 timer på å lytte til deres ventemusikk
-                Lonely av Akon). Lakkeringen, hvis dekkes av forsikringsselskapet, vil totalt koste Mary minst 13000 NOK
-                over 4 år, pluss innsatsen og bryet med å få tilbakebetalt pengene (de samme pengene hun må betale
-                tilbake i løpet av de kommende månedene).
-                Som et resultat bestemmer Mary seg for å ikke bruke forsikringsdekningen og betale lakkeringen på 5000
-                NOK selv, samtidig som hun fortsatt betaler forsikringsselskapet 10000 NOK i år.
-                På den positive siden mottok Mary et kundedividende på 2000 NOK fra forsikringsselskapet før jul.
-`;
 
   useEffect(() => {
     const pin = gsap.fromTo(
@@ -108,7 +93,7 @@ export const ScrollComponent = () => {
                 kjørte på Marys Tesla da den var parkert, og ripet opp fordøren. Bilen trenger nå en lakkering, som vil
                 koste ca. 5000 NOK.</p>
               <p>Mary ringer sitt tradisjonelle forsikringsselskap, som kan dekke kostnaden. Men Mary må betale 8000 NOK
-                i egenandel og vil få sin "bonus" redusert fra 80% til 70%. Dette vil koste henne ekstra 2000 NOK per år
+                i egenandel og vil få sin bonus redusert fra 80% til 70%. Dette vil koste henne ekstra 2000 NOK per år
                 de neste 4 årene, forutsatt at hun ikke har flere skader.</p>
               <p>Mary bruker 4 timer på telefonen med kundeservice (hvorav 3 timer på å lytte til deres ventemusikk
                 Lonely av Akon). Lakkeringen, hvis dekkes av forsikringsselskapet, vil totalt koste Mary minst 13000 NOK
