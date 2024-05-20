@@ -41,7 +41,7 @@ export const ScrollTest = () => {
           {/* Feature 2 */}
           <div ref={(el) => (sectionRefs.current[1] = el!)} className="relative h-screen w-screen flex flex-col justify-center items-center">
             <div className="bg-gray-50">
-              <div className="max-w-5xl mx-auto">
+              <div className="max-w-5xl mx-auto p-4">
                 <p className="text-gray-700 text-lg leading-relaxed font-light">
                   Hvis bilforsikringen din koster deg
                   <span className="font-semibold text-blue-600"> 10 000 NOK</span> hvert år og hvis vi antar at omtrent{" "}

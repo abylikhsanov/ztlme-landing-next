@@ -2,12 +2,8 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Slider } from 'antd';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Element } from 'react-scroll';
 import { useSpring, animated } from 'react-spring';
 
-gsap.registerPlugin(ScrollTrigger);
 export const Calculator = () => {
   const [years, setYears] = useState(1);
   const [savedAmount, setSavedAmount] = useState(0);
@@ -191,19 +187,7 @@ export const TaxCalculator: React.FC = () => {
         const calculatedTax = Math.min(5000, scrollFraction * 5000);
         const calculatedMortgage = Math.min(300000, scrollFraction * 300000);
 
-        gsap.to('.tax-value', {
-          textContent: Math.floor(calculatedTax),
-          duration: 0.5,
-          ease: 'power3.out',
-          snap: { textContent: 1 },
-        });
-
-        gsap.to('.mortgage-value', {
-          textContent: Math.floor(calculatedMortgage),
-          duration: 0.5,
-          ease: 'power3.out',
-          snap: { textContent: 1 },
-        });
+       
       }
     };
 

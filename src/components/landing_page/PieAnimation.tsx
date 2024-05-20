@@ -1,9 +1,36 @@
 import Rive, { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== "undefined" ? window.innerWidth : 0,
+    height: typeof window !== "undefined" ? window.innerHeight : 0,
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowSize;
+};
+
 
 export const PieAnimation = () => {
+  const size = useWindowSize();
+  const isMobile = size.width < 650;
+
+  console.log(`width: ${size.width}`);
+
   const { rive, RiveComponent } = useRive({
-    src: "/3d_pie_chart.riv",
+    src: isMobile ? "/3d_pie_chart_mobile.riv" : "/3d_pie_chart.riv",
     stateMachines: ["pieIn"],
     layout: new Layout({
       fit: Fit.Contain, // Change to: rive.Fit.Contain, or Cover
@@ -38,6 +65,7 @@ export const PieAnimation = () => {
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
+    console.log(`width: ${size.width}`);
 
     return () => {
       if (containerRef.current) {
