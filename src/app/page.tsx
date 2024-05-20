@@ -54,7 +54,7 @@ const LandingPage = () => {
                         <AuroraBackgroundDemo handleClick={handleModal}/>
                         <ScrollComponent/>
                         <ScrollTest />
-                        <TaxCalculator/>
+                        <Calculator/>
                         <FAQ/>
                     </div>
                 )

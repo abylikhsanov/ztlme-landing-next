@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { StickyScroll } from "@/lib/sticky-scroll-reveal";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import {TextGenerateEffect} from "@/lib/text-generate-effect";
 
 export const ScrollComponent = () => {
   const sectionRef = useRef<null | HTMLDivElement>(null);
@@ -14,6 +15,22 @@ export const ScrollComponent = () => {
   const [secondFeatureOpened, setSecondFeatureOpened] = useState(false);
   const [thirdFeatureOpened, setThirdFeatureOpened] = useState(false);
   gsap.registerPlugin(ScrollTrigger);
+
+  const words = `Mary jobber som CVC-investor i et stort energiselskap. Hun har forsikret bilen sin med et tradisjonelt
+                forsikringsselskap og betaler 10000 NOK per år. På vei hjem fra jobb stoppet hun ved matbutikken. Noen
+                kjørte på Marys Tesla da den var parkert, og ripet opp fordøren. Bilen trenger nå en lakkering, som vil
+                koste ca. 5000 NOK.
+                Mary ringer sitt tradisjonelle forsikringsselskap, som kan dekke kostnaden. Men Mary må betale 8000 NOK
+                i egenandel og vil få sin "bonus" redusert fra 80% til 70%. Dette vil koste henne ekstra 2000 NOK per år
+                de neste 4 årene, forutsatt at hun ikke har flere skader.
+                Mary bruker 4 timer på telefonen med kundeservice (hvorav 3 timer på å lytte til deres ventemusikk
+                Lonely av Akon). Lakkeringen, hvis dekkes av forsikringsselskapet, vil totalt koste Mary minst 13000 NOK
+                over 4 år, pluss innsatsen og bryet med å få tilbakebetalt pengene (de samme pengene hun må betale
+                tilbake i løpet av de kommende månedene).
+                Som et resultat bestemmer Mary seg for å ikke bruke forsikringsdekningen og betale lakkeringen på 5000
+                NOK selv, samtidig som hun fortsatt betaler forsikringsselskapet 10000 NOK i år.
+                På den positive siden mottok Mary et kundedividende på 2000 NOK fra forsikringsselskapet før jul.
+`;
 
   useEffect(() => {
     const pin = gsap.fromTo(
@@ -83,19 +100,46 @@ export const ScrollComponent = () => {
             </div>
           </div>
           {/* Feature 2 */}
-          <div className="h-screen w-screen flex flex-col justify-center items-center">
-            <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Imagine Anna</h1>
-            <p>Anna has a low risk profile, owns a car and pays around 15,000 NOK for the car insurance. </p>
+          <div className="h-screen w-screen flex flex-col justify-center items-center p-6">
+            <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Forestill deg Mary</h1>
+            <div className="p-8 text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed space-y-2">
+              <p>Mary jobber som CVC-investor i et stort energiselskap. Hun har forsikret bilen sin med et tradisjonelt
+                forsikringsselskap og betaler 10000 NOK per år. På vei hjem fra jobb stoppet hun ved matbutikken. Noen
+                kjørte på Marys Tesla da den var parkert, og ripet opp fordøren. Bilen trenger nå en lakkering, som vil
+                koste ca. 5000 NOK.</p>
+              <p>Mary ringer sitt tradisjonelle forsikringsselskap, som kan dekke kostnaden. Men Mary må betale 8000 NOK
+                i egenandel og vil få sin "bonus" redusert fra 80% til 70%. Dette vil koste henne ekstra 2000 NOK per år
+                de neste 4 årene, forutsatt at hun ikke har flere skader.</p>
+              <p>Mary bruker 4 timer på telefonen med kundeservice (hvorav 3 timer på å lytte til deres ventemusikk
+                Lonely av Akon). Lakkeringen, hvis dekkes av forsikringsselskapet, vil totalt koste Mary minst 13000 NOK
+                over 4 år, pluss innsatsen og bryet med å få tilbakebetalt pengene (de samme pengene hun må betale
+                tilbake i løpet av de kommende månedene).</p>
+              <p>Som et resultat bestemmer Mary seg for å ikke bruke forsikringsdekningen og betale lakkeringen på 5000
+                NOK selv, samtidig som hun fortsatt betaler forsikringsselskapet 10000 NOK i år.</p>
+              <p>På den positive siden mottok Mary et kundedividende på 2000 NOK fra forsikringsselskapet før jul.</p>
+            </div>
+
           </div>
           {/* Feature 3 */}
-          <div className="h-screen w-screen flex flex-col justify-center items-center">
-            <h1 className="font-bold leading-normal font-dm text-4xl mb-6">No claims made?</h1>
-            <p>Anna does not get any benefit from that.</p>
-          </div>
-          {/* Feature 4 */}
-          <div className="h-screen w-screen flex flex-col justify-center items-center">
-            <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Statistics tell everything</h1>
-            <p>Official data from statistics show that only a light higher sum of half of the car premiums are being used to pay claims</p>
+
+          <div className="h-screen w-screen flex flex-col justify-center items-center p-6">
+            <h1 className="font-bold leading-normal font-dm text-4xl mb-6 p-6">Marys Erfaring med ztl.me</h1>
+            <div
+                className="p-8 text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed space-y-2">
+              <p>Mary, en CVC-investor i et stort energiselskap, selvforsikrer sin Tesla med ZTL.ME og betaler 9900 NOK
+                årlig.</p>
+              <p>Nylig ble bilen hennes ripet opp igjen mens den var parkert. Lakkeringen var estimert til 5000
+                NOK. Mary dokumenterte skaden via ZTL.ME-appen og ble tilbudt en umiddelbar Vipps-overføring på
+                4000 NOK eller full refusjon ved reparasjon. </p>
+              <p>Hun valgte overføringen på 4000 NOK, og brukte bare 2 minutter på
+                telefonen. Heldigvis tilbød lakkeringsverkstedet en rabatt, og hun betalte kun 4150 NOK.</p>
+              <p>Mary bestemte seg for å dekke dette selv i stedet for å bruke forsikringen, mens hun fortsatte å
+                betale den årlige premien på 9500 NOK. </p>
+              <p>Til tross for hendelsen mottok Mary et kundedividende på 2000 NOK fra ZTL.ME før jul, som kunne ha
+                vært 6000 NOK hvis hun ikke hadde vært uheldig. </p>
+              <p>I stedet for å håndtere lange forsikringssamtaler, kunne Mary nyte verdifull tid med barna sine, og
+                forvandle en utfordring til en hjertelig opplevelse.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -105,9 +149,9 @@ export const ScrollComponent = () => {
 
 export const Why = () => {
   return (
-    <div className="">
-      <StickyScroll content={content} />
-    </div>
+      <div className="">
+        <StickyScroll content={content}/>
+      </div>
   );
 };
 
@@ -117,9 +161,9 @@ export const Ahy = () => {
   const [thirdFeatureOpened, setThirdFeatureOpened] = useState(false);
 
   return (
-    <div className="flex flex-col m-12 max-w-7xl mx-auto">
-      <div className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
-        <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Hvorfor ztl.me?</h1>
+      <div className="flex flex-col m-12 max-w-7xl mx-auto">
+        <div className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
+          <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Hvorfor ztl.me?</h1>
         <p className="text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed">
           ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40 000 selvforsikrere. Hvorfor akkurat 40 000 selvforsikrere? Hvis
           man tar utgangspunkt i en gjennomsnittlig forsikringskunde i Norge sier matematiske forsikringsmodeller at man trenger 33 000 kunder for å kunne drive

@@ -49,7 +49,7 @@ export const PieAnimation = () => {
           if (entry.isIntersecting) {
             timeoutRef.current = window.setTimeout(() => {
               rive && rive.play();
-            }, 2000);
+            }, 1000);
           } else {
             if (timeoutRef.current) {
               clearTimeout(timeoutRef.current);

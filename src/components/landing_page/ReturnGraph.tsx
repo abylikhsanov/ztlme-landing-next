@@ -3,10 +3,10 @@ import { useEffect, useRef } from "react";
 
 export const ReturnGraph = () => {
   const { rive, RiveComponent } = useRive({
-    src: "/test.riv",
-    stateMachines: ["Insight-2 Hover"],
+    src: "/return.riv",
+    stateMachines: ["Loader"],
     layout: new Layout({
-      fit: Fit.FitWidth, // Change to: rive.Fit.Contain, or Cover
+      fit: Fit.Contain, // Change to: rive.Fit.Contain, or Cover
       alignment: Alignment.Center,
     }),
     autoplay: false,
@@ -22,7 +22,7 @@ export const ReturnGraph = () => {
           if (entry.isIntersecting) {
             timeoutRef.current = window.setTimeout(() => {
               rive && rive.play();
-            }, 2000);
+            }, 1000);
           } else {
             if (timeoutRef.current) {
               clearTimeout(timeoutRef.current);

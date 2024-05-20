@@ -58,7 +58,7 @@ export const ScrollTest = () => {
             </div>
           </div>
           {/* Feature 3 */}
-          <div ref={(el) => (sectionRefs.current[2] = el!)} className="relaitve h-screen w-screen flex flex-col justify-center items-center bg-black">
+          <div ref={(el) => (sectionRefs.current[2] = el!)} className="relaitve h-screen w-screen flex flex-col justify-center items-center bg-white">
             <ReturnGraph />
           </div>
           {/* Feature 4 
