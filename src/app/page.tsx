@@ -52,7 +52,7 @@ const LandingPage = () => {
                     <div>
                         {showModal && <SignUpModal onClose={handleModal} setPage={handlePageChange}/>}
                         <AuroraBackgroundDemo handleClick={handleModal}/>
-                        <ScrollComponent/>
+                        <Why />
                         <ScrollTest />
                         <Calculator/>
                         <FAQ/>

@@ -143,7 +143,7 @@ export const ScrollComponent = () => {
     );
 };
 
-export const Why = () => {
+export const AWhy = () => {
     return (
         <div className="">
             <StickyScroll content={content}/>
@@ -151,7 +151,7 @@ export const Why = () => {
     );
 };
 
-export const Ahy = () => {
+export const Why = () => {
     const [firstFeatureOpened, setFirstFeatureOpened] = useState(false);
     const [secondFeatureOpened, setSecondFeatureOpened] = useState(false);
     const [thirdFeatureOpened, setThirdFeatureOpened] = useState(false);
@@ -161,15 +161,22 @@ export const Ahy = () => {
             <div className="flex flex-col items-center p-8 max-w-4xl mx-auto rounded-xl mb-24 bg-gray-50 shadow-xl">
                 <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Hvorfor ztl.me?</h1>
                 <p className="text-md md:text-lg lg:text-xl font-dm text-center text-gray-600 leading-relaxed">
-                    ztl.me starter reisen med å utfordre forsikringsmarkedet med et solid fundament på 40 000
-                    selvforsikrere. Hvorfor akkurat 40 000 selvforsikrere? Hvis
-                    man tar utgangspunkt i en gjennomsnittlig forsikringskunde i Norge sier matematiske
-                    forsikringsmodeller at man trenger 33 000 kunder for å kunne drive
-                    lønnsom forsikringsvirksomhet. Dette inkluderer alle utbetalinger til skade og tap, samt drift og
-                    avkastning på egenkapitalen. Vi har derfor lagt oss
-                    på et litt høyere nivå slik at ztl.me har en ekstra god margin, noe som uansett kommer ztl.mes
-                    selvforsikrere til gode i form av avkastning.
-                    Ytterligere til gode.
+                    Visste du at nesten halvparten av de betalte bilpremiene går til forsikringsselskapene
+                    nesten hvert år?
+                    Forsikringsmarkedet er stort, kjedelig, kundefiendtlig, gammeldags, dyrt og har ikke
+                    innovert sin modell
+                    siden før WW1 – og dominert av noen få store aktører. Det eneste formålet med ZTL.ME er å
+                    radikalt endre dette.
+                    ztl.me er et kooperativ som vil involvere selvassurandører til å gå sammen ved å betale
+                    inn
+                    et årlig bidrag til kooperativet og hvert medlem eier da en liten prosentandel av
+                    kooperativet.
+                    Den samlede betalingen fra alle medlemmer vil da bli brukt til å dekke bilen din på en
+                    mye bedre
+                    enn du gjør i dag. Gitt at forsikringsselskaper historisk sett hadde overskudd på
+                    bilpremier,
+                    er det faktisk ikke nødvendig gitt at et stort nok medlem vil melde seg inn i et
+                    selvforsikringskooperativ.
                 </p>
                 {/* Add a button or call to action if applicable */}
                 {/* <button className="mt-6 bg-blue-700 text-white font-bold py-2 px-4 rounded hover:bg-blue-800 transition duration-300">Learn More</button> */}
@@ -178,9 +185,15 @@ export const Ahy = () => {
             <div>
                 {/* First feature */}
                 <Features
-                    header="Trygghet med fordeler"
-                    text="Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap. Som vi viste gjennom bileksempelet er det store summer som er ubenyttede, og som utgjør kjernen i forsikringsselskapene forretningsmodell. I motsetning til de store tradisjonelle forsikringsselskapene hvor disse midlene havne i eiernes lommer, fordeles midlene på ztl.mes selvforsikrere."
-                    smallText="Det solide fundamentet til ztl.me tilbyr et beskyttelsesnivå som er sammenlignbart med et hvilket som helst tradisjonelt forsikringsselskap."
+                    header="Forestill deg Mary"
+                    text="Mary, en CVC-investor i et stort energiselskap, har en bilforsikring som koster henne 10 000 NOK per år. 
+                    En dag blir hennes parkerte Tesla påkjørt, og lakkeringskostnaden er estimert til 5000 NOK. 
+                    Hennes forsikringsselskap vil dekke skaden, men Mary må betale en egenandel på 8000 NOK og får sin bonus redusert fra 80% til 70%, 
+                    noe som vil koste henne 2000 NOK ekstra per år de neste 4 årene. Etter å ha brukt 4 timer på telefon med kundeservice, 
+                    innser Mary at forsikringen vil koste henne totalt 13 000 NOK over 4 år. Hun bestemmer seg derfor for å betale 
+                    5000 NOK for lakkeringen selv og beholder sin forsikring til 10 000 NOK per år. 
+                    Positivt nok mottok hun et kundedividende på 2000 NOK før jul."
+                    smallText="Mary, en CVC-investor i et stort energiselskap, har en bilforsikring som koster henne 10 000 NOK per år."
                     featureOpened={firstFeatureOpened}
                     setFirstFeatureOpened={setFirstFeatureOpened}
                     reversedOrder={false}
@@ -191,11 +204,12 @@ export const Ahy = () => {
             <div>
                 {/* Second feature */}
                 <Features
-                    header="Vårt løfte"
-                    text="Når du flytter dine forsikringer til ztl.me gir vi deg en garanti:  du vil betale det samme eller mindre som du gjør i dag, og ha like gode betingelser. 
-        I tillegg har du mulighet til å få tilbake en del av pengen med avkastning! Det kan ikke forsikringsselskapene tilby. 
-        Grunnen er at det er selvforsikrerne i ztl.me som eier midlene selv.  Jo fortere du flytter forsikringen din til ztl.me, jo mer lønnsomt kan det bli."
-                    smallText="Du vil betale det samme eller mindre som du gjør i dag"
+                    header="Marys Erfaring med ztl.me"
+                    text="Mary, en CVC-investor i et stort energiselskap, selvforsikrer sin Tesla med ZTL.ME og betaler 9900 NOK årlig. Nylig ble bilen hennes ripet opp igjen mens den var parkert. Lakkeringen var estimert til 5000 NOK. Mary dokumenterte skaden via ZTL.ME-appen og ble tilbudt en umiddelbar Vipps-overføring på 4000 NOK eller full refusjon ved reparasjon.
+                    Hun valgte overføringen på 4000 NOK og brukte bare 2 minutter på app. Heldigvis tilbød lakkeringsverkstedet en rabatt, og hun betalte kun 4150 NOK.
+                    Til tross for hendelsen mottok Mary et kundedividende på 2000 NOK fra ZTL.ME før jul, som kunne ha vært 6000 NOK hvis hun ikke hadde vært uheldig.
+                    I stedet for å håndtere lange forsikringssamtaler, kunne Mary nyte verdifull tid med barna sine, og forvandle en utfordring til en hjertelig opplevelse."
+                    smallText="Med ztl.me betaler Mary mindre og får mer penger tilbake"
                     featureOpened={secondFeatureOpened}
                     setFirstFeatureOpened={setSecondFeatureOpened}
                     reversedOrder={true}
@@ -206,12 +220,11 @@ export const Ahy = () => {
             <div>
                 {/* Third feature */}
                 <Features
-                    header="Styrk felleskapet"
-                    text="De store tradisjonelle forsikringsselskapene skiller ikke på kunde i form av lojalitet, størrelse eller atferd. 
-        Alle innbetalingen går til eierne uansett. Har du en skade på f.eks. bil kan du oppleve at forsikringspremien blir høyere, men det påvirker ikke en annen kunde som ikke har skade.
-        Hovedfokus er på profitt, ikke på dine faktiske behov. I ztl.me vil en skadefri eller skadebegensende atferd lønne seg for alle. Da blir det mer å fordele til felleskapet. 
-        I en tid hvor prisene stiger og ting blir dyrere tror vi på at dette er en modell som styrker fellesskapet og bidrar til demokratisering av forsikringer"
-                    smallText="I ztl.me vil en skadefri eller skadebegensende atferd lønne seg for alle."
+                    header="Avktastning?"
+                    text="Hvert år har ztl.me 10 % av den gjenværende uavhentede premien for å investere i finanspapirer med lav risiko. 
+                    Du som medlem av andelslaget får din del av avkastningen. Enkelt sagt samler vi alle dine årlige bidrag og beregner din 
+                    andelsandel mot den totale innbetalte premiepotten, og det er din andel"
+                    smallText="Du får ikke bare tilbakebetaling gjenværende premie men også avkastning"
                     featureOpened={thirdFeatureOpened}
                     setFirstFeatureOpened={setThirdFeatureOpened}
                     reversedOrder={false}
