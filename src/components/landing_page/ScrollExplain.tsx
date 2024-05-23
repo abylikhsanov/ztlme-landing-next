@@ -38,29 +38,6 @@ export const ScrollTest = () => {
           <div ref={(el) => (sectionRefs.current[0] = el!)} className="relaitve h-screen w-screen flex flex-col justify-center items-center bg-[#2a2a33]">
             <PieAnimation />
           </div>
-          {/* Feature 2 */}
-          <div ref={(el) => (sectionRefs.current[1] = el!)} className="relative h-screen w-screen flex flex-col justify-center items-center">
-            <div className="bg-gray-50">
-              <div className="max-w-5xl mx-auto p-4">
-                <p className="text-gray-700 text-lg leading-relaxed font-light">
-                  Hvis bilforsikringen din koster deg
-                  <span className="font-semibold text-blue-600"> 10 000 NOK</span> hvert år og hvis vi antar at omtrent{" "}
-                  <span className="font-semibold text-blue-600">200 millioner NOK </span>
-                  er utelatt av <span className="font-semibold text-blue-600"> 400 millioner NOK </span>
-                  betalt ved årets slutt som uinnhentet sum (igjen baserer vi våre tall på en lang historisk data i Norge), vil du få rundt{" "}
-                  <span className="font-semibold text-blue-600">4250 kr</span> tilbake hvis du ikke har krevd noe det året.
-                </p>
-                <p className="text-gray-700 text-lg leading-relaxed font-light mt-4">
-                  Hvis du krevde mer enn <span className="font-semibold text-blue-600">4250 NOK </span>
-                  så ingen grunn til bekymring, du skylder ikke noe du bare ikke får refusjon.
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* Feature 3 */}
-          <div ref={(el) => (sectionRefs.current[2] = el!)} className="relaitve h-screen w-screen flex flex-col justify-center items-center bg-white">
-            <ReturnGraph />
-          </div>
           {/* Feature 4 
           <div ref={(el) => (sectionRefs.current[3] = el!)} className="h-screen w-screen flex flex-col justify-center items-center">
             <h1 className="font-bold leading-normal font-dm text-4xl mb-6">Statistics tell everything</h1>

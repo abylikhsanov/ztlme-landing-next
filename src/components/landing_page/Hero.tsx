@@ -99,7 +99,7 @@ export function AuroraBackgroundDemo({handleClick}:{handleClick: () => void}) {
                         <Cursor cursorStyle="|" /> 
                 </div>
                 <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
-                    Dekke bilen din på en{' '}
+                    Dekk bilen din på en{' '}
                     <span className='text-blue-500'>ny</span>{' '}
                     måte
                 </div>

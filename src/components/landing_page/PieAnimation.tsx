@@ -30,8 +30,8 @@ export const PieAnimation = () => {
   console.log(`width: ${size.width}`);
 
   const { rive, RiveComponent } = useRive({
-    src: isMobile ? "/3d_pie_chart_mobile.riv" : "/3d_pie_chart.riv",
-    stateMachines: ["pieIn"],
+    src: "/fordeller.riv",
+    stateMachines: ["pieOut"],
     layout: new Layout({
       fit: Fit.Contain, // Change to: rive.Fit.Contain, or Cover
       alignment: Alignment.Center,
